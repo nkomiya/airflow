@@ -1,0 +1,4 @@
+[submodule "util"]
+	path = quick_start/dags/dependencies/util
+	url = git@github.com:nkomiya/airflow.git
+	branch = dependencies/util

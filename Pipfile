@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+autopep8 = "*"
+apache-airflow = {extras = ["gcp"],version = "*"}
+sphinx = "*"
+sphinx-rtd-theme = "*"
+
+[packages]
+
+[requires]
+python_version = "3.8"
