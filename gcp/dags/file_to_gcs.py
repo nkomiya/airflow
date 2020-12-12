@@ -5,7 +5,7 @@ from airflow import DAG
 
 from dependencies.operators import CreateFile, UploadFile
 from dependencies.util import DEFAULT_ARGS
-from dependencies import TaskId
+from dependencies.task_id import IdsFileToGcs
 
 DAG_ID = os.path.basename(__file__).split('.')[0]
 
@@ -33,8 +33,8 @@ with DAG(DAG_ID,
     dag.doc_md = DOC_MD
 
     # build tasks
-    t1 = CreateFile(TEMPORARY_FILE).build(TaskId.CREATE_FILE)
-    t2 = UploadFile(TEMPORARY_FILE, NAME).build(TaskId.UPLOAD_FILE)
+    t1 = CreateFile(TEMPORARY_FILE).build(IdsFileToGcs.CREATE_FILE)
+    t2 = UploadFile(TEMPORARY_FILE, NAME).build(IdsFileToGcs.UPLOAD_FILE)
 
     # configure dependencies
     t1 >> t2
