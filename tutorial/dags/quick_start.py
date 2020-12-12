@@ -4,7 +4,7 @@ from airflow import DAG
 
 from dependencies.operators import PrintDate, Sleep, Templated
 from dependencies.util import DEFAULT_ARGS
-from dependencies import TaskId
+from dependencies.task_id import IdsQuickStart
 
 
 DAG_ID = 'quick_start'
@@ -23,9 +23,9 @@ with DAG(DAG_ID,
     dag.doc_md = __doc__
 
     # whole tasks
-    t1 = PrintDate().build(TaskId.PRINT_DATE)
-    t2 = Sleep().build(TaskId.SLEEP)
-    t3 = Templated().build(TaskId.TEMPLATED)
+    t1 = PrintDate().build(IdsQuickStart.PRINT_DATE)
+    t2 = Sleep().build(IdsQuickStart.SLEEP)
+    t3 = Templated().build(IdsQuickStart.TEMPLATED)
 
     # task dependency
     [t1, t2] >> t3

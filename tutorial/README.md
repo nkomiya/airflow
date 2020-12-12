@@ -1,8 +1,8 @@
-# quick-start
+# tutorial
 
 <!-- TOC -->
 
-- [quick-start](#quick-start)
+- [tutorial](#tutorial)
     - [Usage](#usage)
         - [Setup docker container](#setup-docker-container)
     - [DAGs](#dags)
@@ -22,7 +22,7 @@ Activate Airflow web UI on [localhost](http://localhost:8080).
 ```bash
 # start container
 $ docker run -d --rm --name airflow -p 8080:8080 \
-    --volume $(git rev-parse --show-toplevel)/quick_start/dags:/opt/airflow/dags \
+    --volume $(git rev-parse --show-toplevel)/tutorial/dags:/opt/airflow/dags \
     airflow
 
 # set alias
@@ -72,5 +72,5 @@ $ airflow test -dr quick_start print_date 2020-01-01
 
 ```bash
 $ PIPENV_PIPFILE=$(git rev-parse --show-toplevel)/Pipfile pipenv run \
-  make -C $(git rev-parse --show-toplevel)/quick_start/docs html
+  make -C $(git rev-parse --show-toplevel)/tutorial/docs html
 ```

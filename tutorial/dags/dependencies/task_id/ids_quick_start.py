@@ -3,7 +3,7 @@ from enum import auto
 from dependencies.util import BaseTaskId
 
 
-class TaskId(BaseTaskId):
+class IdsQuickStart(BaseTaskId):
 
     PRINT_DATE = auto()
     SLEEP = auto()
