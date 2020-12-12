@@ -8,18 +8,8 @@ Subpackages
    :maxdepth: 4
 
    dependencies.operators
+   dependencies.task_id
    dependencies.util
-
-Submodules
-----------
-
-dependencies.task\_id module
-----------------------------
-
-.. automodule:: dependencies.task_id
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 Module contents
 ---------------

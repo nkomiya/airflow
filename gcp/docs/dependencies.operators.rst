@@ -12,6 +12,14 @@ dependencies.operators.create\_file module
    :undoc-members:
    :show-inheritance:
 
+dependencies.operators.run\_sql module
+--------------------------------------
+
+.. automodule:: dependencies.operators.run_sql
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.operators.upload\_file module
 ------------------------------------------
 
