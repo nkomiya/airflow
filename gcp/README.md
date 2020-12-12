@@ -101,6 +101,7 @@ Available DAGs are listed below with required IAM roles.
 DAG ID|description|IAM roles
 :--|:--|:--
 file_to_gcs|Generate file and upload it to Google Cloud Storage|roles/storage.admin
+bigquery_operator|Create BigQuery table by templated SQL|roles/bigquery.admin
 
 ---
 
