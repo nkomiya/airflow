@@ -9,6 +9,7 @@
             - [Setup credential](#setup-credential)
                 - [Copy key file](#copy-key-file)
             - [Configure Airflow variables](#configure-airflow-variables)
+            - [Configure Airflow connections](#configure-airflow-connections)
     - [DAGs](#dags)
     - [Build API doc](#build-api-doc)
 
@@ -73,6 +74,25 @@ $ docker exec airflow bash dags/config/update.sh
 ```
 
 You can check all variables via [Airflow UI](http://localhost:8080/admin/variable/)
+
+#### Configure Airflow connections
+
+As the GCP project where BigQuery jobs run is designated by Airflow connections,
+it is needed to set GCP project in connection `bigquery_default`.
+
+```bash
+# Delete default `bigquery_default`
+$ airflow connections -d --conn_id bigquery_default
+
+# Add `bigquery_default` with GCP project ID
+$ PROJECT=...
+$ airflow connections -a \
+     --conn_id bigquery_default \
+     --conn_type google_cloud_platform \
+     --conn_extra '{
+       "extra__google_cloud_platform__project": "'${PROJECT}'"
+     }'
+```
 
 ## DAGs
 
