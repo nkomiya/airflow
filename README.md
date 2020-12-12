@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-Build docker image according to branch [emulator](https://github.com/nkomiya/airflow/tree/emulator).
+Build docker image according to [emulator](https://github.com/nkomiya/airflow/tree/emulator) branch.
 
 ### Additional task
 
@@ -18,9 +18,10 @@ $ git submodule update -i
 
 ## DAGs
 
-name|dag folder|description
-:--|:--|:--
-[quick_start](quick_start)|[quick_start/dags](https://github.com/nkomiya/airflow/blob/demo/quick_start/dags)|A simple dag by [Apache Airflow's tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html)
+DAG ID|description
+:--|:--
+[quick_start](quick_start)|A simple DAG by [Apache Airflow's tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html)
+[gcp](gcp)|Sample DAGs which access to [Google Cloud Platform](https://cloud.google.com/gcp)
 
 ---
 

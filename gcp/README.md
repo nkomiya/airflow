@@ -10,7 +10,7 @@
         - [Setup credential](#setup-credential)
             - [Copy key file](#copy-key-file)
     - [DAGs](#dags)
-    - [Build api doc](#build-api-doc)
+    - [Build API doc](#build-api-doc)
 
 <!-- /TOC -->
 
@@ -78,7 +78,9 @@ DAG ID|description|IAM roles
 :--|:--|:--
 file_to_gcs|Generate file and upload it to Google Cloud Storage|roles/storage.admin
 
-## Build api doc
+---
+
+## Build API doc
 
 ```bash
 $ PIPENV_PIPFILE=$(git rev-parse --show-toplevel)/Pipfile pipenv run \
