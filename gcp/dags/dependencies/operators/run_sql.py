@@ -10,11 +10,13 @@ class RunSql(OperatorDescriber):
     Args:
         template (str): Path to SQL template file
         table (str): Output table name
+        location (str): GCP region where SQL is executed
     """
 
-    def __init__(self, template, table):
+    def __init__(self, template, table, location):
         self.template = template
         self.table = table
+        self.location = location
 
     def get_operator_class(self):
         return BigQueryOperator
@@ -26,7 +28,7 @@ class RunSql(OperatorDescriber):
             "create_disposition": CreateDisposition.CREATE_IF_NEEDED,
             "write_disposition": WriteDisposition.WRITE_TRUNCATE,
             "use_legacy_sql": False,
-            "location": "US",
+            "location": self.location,
             "labels": {
                 "component": "airflow"
             }

@@ -3,7 +3,7 @@ import os
 
 from airflow import DAG
 
-from dependencies.operators import RunSql
+from dependencies.operators import RunSql, SummarizeQueryJob
 from dependencies.util import DEFAULT_ARGS
 from dependencies.task_id import IdsBigqueryOperator
 
@@ -14,6 +14,7 @@ TEMPLATE = f"sql/{DAG_ID}.sql"
 
 # Resources
 TABLE = "bigquery_operator"
+LOCATION = "us"
 
 # Descriptions
 DESCRIPTION = 'Create BigQuery table'
@@ -37,4 +38,7 @@ with DAG(DAG_ID,
     dag.doc_md = DOC_MD
 
     # build tasks
-    t = RunSql(TEMPLATE, TABLE).build(IdsBigqueryOperator.RUN_SQL)
+    t1 = RunSql(TEMPLATE, TABLE, LOCATION).build(IdsBigqueryOperator.RUN_SQL)
+    t2 = SummarizeQueryJob(IdsBigqueryOperator.RUN_SQL.id, LOCATION).build(IdsBigqueryOperator.SUMMARIZE)
+
+    t1 >> t2

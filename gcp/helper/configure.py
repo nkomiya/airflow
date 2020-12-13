@@ -3,7 +3,7 @@ from configparser import ConfigParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CONFIG = "dags/config/variables.conf"
+CONFIG = Path(__file__).resolve().parent.parent.joinpath("dags/config/variables.conf")
 
 
 def get_default_if_empty(val, default):
