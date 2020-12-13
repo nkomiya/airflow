@@ -28,10 +28,6 @@ class Templated(OperatorDescriber):
         }
 
     @classmethod
-    def get_task_id(cls):
-        return TaskId.TEMPLATED
-
-    @classmethod
     def get_doc_md(cls):
         return """\
             #### Task description

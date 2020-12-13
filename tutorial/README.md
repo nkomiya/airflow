@@ -8,6 +8,7 @@
     - [DAGs](#dags)
         - [Tasks](#tasks)
             - [quick_start](#quick_start)
+            - [xcom_single](#xcom_single)
     - [Testing](#testing)
     - [Build API doc](#build-api-doc)
 
@@ -36,6 +37,7 @@ Available DAGs are listed below with required IAM roles.
 DAG ID|description
 :--|:--
 quick_start|A simple DAG for quick start
+xcom_single|Share single object between PythonOperators using XCom
 
 ### Tasks
 
@@ -46,6 +48,13 @@ Task ID|description
 print_date|output current time
 sleep|sleep 1 second
 templated|sample task using templated command
+
+#### xcom_single
+
+Task ID|description
+:--|:--
+xcom_push|push single value
+xcom_pull|pull single value
 
 ## Testing
 
