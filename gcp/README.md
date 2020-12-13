@@ -66,8 +66,8 @@ GCP resources accessed in DAGs is specified via Airflow variables, which can be 
 # Set GCP project ID
 $ PROJECT=...
 
-# Create config files (which is located in volume mounted on container)
-$ python $(git rev-parse --show-toplevel)/gcp/helper/configure.py ${PROJECT}
+# Create config files to gcp/dags/config/ (this directory should be located at /opt/airflow/dags/config/)
+$ python $(git rev-parse --show-toplevel)/gcp/helper/configure.py -p ${PROJECT}
 
 # Update Airflow variables
 $ docker exec airflow bash dags/config/update.sh
