@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    dependencies.operators
+   dependencies.task_id
    dependencies.util
 
 Module contents

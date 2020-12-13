@@ -28,6 +28,38 @@ dependencies.operators.templated module
    :undoc-members:
    :show-inheritance:
 
+dependencies.operators.xcom\_pull module
+----------------------------------------
+
+.. automodule:: dependencies.operators.xcom_pull
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dependencies.operators.xcom\_pull\_kv module
+--------------------------------------------
+
+.. automodule:: dependencies.operators.xcom_pull_kv
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dependencies.operators.xcom\_push module
+----------------------------------------
+
+.. automodule:: dependencies.operators.xcom_push
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dependencies.operators.xcom\_push\_kv module
+--------------------------------------------
+
+.. automodule:: dependencies.operators.xcom_push_kv
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
