@@ -5,18 +5,15 @@ from dependencies.util import OperatorDescriber
 
 class Sleep(OperatorDescriber):
 
-    @classmethod
-    def get_operator_class(cls):
+    def get_operator_class(self):
         return BashOperator
 
-    @classmethod
-    def get_operator_args(cls):
+    def get_operator_args(self):
         return {
             "bash_command": "sleep 1"
         }
 
-    @classmethod
-    def get_doc_md(cls):
+    def get_doc_md(self):
         return """\
             #### Task description
 

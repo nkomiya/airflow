@@ -14,21 +14,18 @@ class Templated(OperatorDescriber):
     {% endfor -%}
     """
 
-    @classmethod
-    def get_operator_class(cls):
+    def get_operator_class(self):
         return BashOperator
 
-    @classmethod
-    def get_operator_args(cls):
+    def get_operator_args(self):
         return {
-            "bash_command": cls.CMD_TEMPLATE,
+            "bash_command": self.CMD_TEMPLATE,
             "params": {
                 "var1": "parameter"
             }
         }
 
-    @classmethod
-    def get_doc_md(cls):
+    def get_doc_md(self):
         return """\
             #### Task description
 
