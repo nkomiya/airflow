@@ -34,7 +34,7 @@ $ alias airflow='docker exec airflow airflow'
 
 ## DAGs
 
-Available DAGs are listed below with required IAM roles.
+Available DAGs are listed below.
 
 DAG ID|description
 :--|:--
@@ -43,6 +43,8 @@ xcom_single|Share single object between PythonOperators using XCom
 xcom_kv|Share multiple keyed objects between PythonOperators using XCom
 
 ### Tasks
+
+Available tasks in each DAG are listed below.
 
 #### quick_start
 

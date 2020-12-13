@@ -16,12 +16,12 @@ $ git checkout demo
 $ git submodule update -i
 ```
 
-## DAGs
+## DAG folders
 
-DAG ID|description
+name|description
 :--|:--
-[quick_start](quick_start)|A simple DAG by [Apache Airflow's tutorial](https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html)
-[gcp](gcp)|Sample DAGs which access to [Google Cloud Platform](https://cloud.google.com/gcp)
+[tutorial](tutorial)|DAGs using pure Airflow functions
+[gcp](gcp)|DAGs using operators to access [Google Cloud Platform](https://cloud.google.com/gcp)
 
 ---
 
