@@ -10,6 +10,7 @@
             - [quick_start](#quick_start)
             - [xcom_single](#xcom_single)
             - [xcom_kv](#xcom_kv)
+            - [branching](#branching)
     - [Testing](#testing)
     - [Build API doc](#build-api-doc)
 
@@ -50,6 +51,7 @@ Task ID|description
 print_date|output current time
 sleep|sleep 1 second
 templated|sample task using templated command
+branching|branch workflow depending on whether run date is weekdays or not
 
 #### xcom_single
 
@@ -64,6 +66,23 @@ Task ID|description
 :--|:--
 xcom_push|push multiple keyed objects
 xcom_pull|pull multiple keyed objects
+
+#### branching
+
+Task ID|description
+:--|:--
+branch_op|branch workflow depending on run date
+on_weekdays|task to be executed on weekdays
+on_weekends|task to be executed on weekends
+
+To test the DAG, run back fill for a certain period.
+
+```bash
+# Run back fill for 1 week
+$ airflow backfill -s 2020-01-01 -e 2020-01-07 branching
+```
+
+You can check workflow branching on [Airflow UI](http://localhost:8080/admin/airflow/tree?dag_id=branching).
 
 ## Testing
 

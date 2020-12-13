@@ -4,6 +4,14 @@ dependencies.task\_id package
 Submodules
 ----------
 
+dependencies.task\_id.ids\_branching module
+-------------------------------------------
+
+.. automodule:: dependencies.task_id.ids_branching
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.task\_id.ids\_quick\_start module
 ----------------------------------------------
 

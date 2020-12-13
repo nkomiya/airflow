@@ -4,6 +4,30 @@ dependencies.operators package
 Submodules
 ----------
 
+dependencies.operators.branch\_op module
+----------------------------------------
+
+.. automodule:: dependencies.operators.branch_op
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dependencies.operators.on\_weekdays module
+------------------------------------------
+
+.. automodule:: dependencies.operators.on_weekdays
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dependencies.operators.on\_weekends module
+------------------------------------------
+
+.. automodule:: dependencies.operators.on_weekends
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.operators.print\_date module
 -----------------------------------------
 

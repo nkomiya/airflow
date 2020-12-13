@@ -11,7 +11,10 @@ Welcome to dags's documentation!
    :caption: Contents:
 
    dependencies
+   branching
    quick_start
+   xcom_kv
+   xcom_single
 
 
 Indices and tables
