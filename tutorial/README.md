@@ -9,6 +9,7 @@
         - [Tasks](#tasks)
             - [quick_start](#quick_start)
             - [xcom_single](#xcom_single)
+            - [xcom_kv](#xcom_kv)
     - [Testing](#testing)
     - [Build API doc](#build-api-doc)
 
@@ -38,6 +39,7 @@ DAG ID|description
 :--|:--
 quick_start|A simple DAG for quick start
 xcom_single|Share single object between PythonOperators using XCom
+xcom_kv|Share multiple keyed objects between PythonOperators using XCom
 
 ### Tasks
 
@@ -55,6 +57,13 @@ Task ID|description
 :--|:--
 xcom_push|push single value
 xcom_pull|pull single value
+
+#### xcom_kv
+
+Task ID|description
+:--|:--
+xcom_push|push multiple keyed objects
+xcom_pull|pull multiple keyed objects
 
 ## Testing
 
