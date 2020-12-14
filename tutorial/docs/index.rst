@@ -14,6 +14,7 @@ Welcome to dags's documentation!
    branching
    quick_start
    trigger
+   trigger_with_branch
    xcom_kv
    xcom_single
 

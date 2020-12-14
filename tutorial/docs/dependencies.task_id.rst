@@ -28,6 +28,14 @@ dependencies.task\_id.ids\_trigger module
    :undoc-members:
    :show-inheritance:
 
+dependencies.task\_id.ids\_trigger\_with\_branch module
+-------------------------------------------------------
+
+.. automodule:: dependencies.task_id.ids_trigger_with_branch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.task\_id.ids\_xcom module
 --------------------------------------
 

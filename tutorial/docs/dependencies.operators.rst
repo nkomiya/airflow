@@ -4,6 +4,14 @@ dependencies.operators package
 Submodules
 ----------
 
+dependencies.operators.branch\_by\_key module
+---------------------------------------------
+
+.. automodule:: dependencies.operators.branch_by_key
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.operators.branch\_op module
 ----------------------------------------
 

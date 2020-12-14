@@ -1,3 +1,4 @@
+from .branch_by_key import BranchByKey
 from .branch_op import BranchOp
 from .on_weekdays import OnWeekDays
 from .on_weekends import OnWeekEnds
@@ -12,6 +13,6 @@ from .xcom_pull_kv import XcomPullKv
 from .xcom_push_kv import XcomPushKv
 
 __all__ = [
-    'BranchOp', 'OnWeekDays', 'OnWeekEnds', 'PrintDate', 'Sleep', 'StateControllable',
+    'BranchByKey', 'BranchOp', 'OnWeekDays', 'OnWeekEnds', 'PrintDate', 'Sleep', 'StateControllable',
     'Templated', 'TriggerConfigurable', 'XcomPull', 'XcomPush', 'XcomPullKv', 'XcomPushKv'
 ]

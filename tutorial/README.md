@@ -12,6 +12,7 @@
             - [xcom_kv](#xcom_kv)
             - [branching](#branching)
             - [trigger](#trigger)
+            - [trigger_with_branch](#trigger_with_branch)
     - [Testing](#testing)
     - [Build API doc](#build-api-doc)
 
@@ -44,6 +45,7 @@ xcom_single|Share single object between PythonOperators using XCom
 xcom_kv|Share multiple keyed objects between PythonOperators using XCom
 branching|branch workflow depending on whether run date is weekdays or not
 trigger|contain a task whose trigger rule is configurable
+trigger_with_branch|contain a task which joins branching and whose trigger rule is configurable
 
 ### Tasks
 
@@ -90,8 +92,6 @@ You can check workflow branching on [Airflow UI](http://localhost:8080/admin/air
 
 #### trigger
 
-Trigger task depends on states of prior tasks.
-
 Task ID|description
 :--|:--
 task_a|state controllable task via Airflow variable
@@ -113,6 +113,36 @@ $ airflow variables -s task_b fail
 
 # Task trigger rule
 $ airflow variables -s trigger_rule all_done
+```
+
+#### trigger_with_branch
+
+Task ID|description
+:--|:--
+branch_op|branch workflow depending on run date
+task_a|state controllable task via Airflow variable
+task_b|state controllable task via Airflow variable
+trigger_configured|trigger configurable task
+
+Tasks `task_a` and `task_b` are located in different branches which stem from the task `branch_op`,
+and the task `trigger_configured` is a down stream task of `on_weekdays` and `on_weekends`.
+
+Following Airflow variables determine the behavior of the DAG.
+
+- `branch_key`: Determine which subsequent task is executed.
+- `task_a` (or `task_b`): Determine the task `task_a` succeeds or not (same to `task_b`).
+- `trigger_rule`: Trigger rule for the task `trigger_configured`
+
+```bash
+# Subsequent task
+$ airflow variables -s branch_key task_b
+
+# Task state
+$ airflow variables -s task_a ok
+$ airflow variables -s task_b fail
+
+# Task trigger rule
+$ airflow variables -s trigger_rule none_failed
 ```
 
 ## Testing
