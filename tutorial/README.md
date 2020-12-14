@@ -11,6 +11,7 @@
             - [xcom_single](#xcom_single)
             - [xcom_kv](#xcom_kv)
             - [branching](#branching)
+            - [trigger](#trigger)
     - [Testing](#testing)
     - [Build API doc](#build-api-doc)
 
@@ -41,6 +42,8 @@ DAG ID|description
 quick_start|A simple DAG for quick start
 xcom_single|Share single object between PythonOperators using XCom
 xcom_kv|Share multiple keyed objects between PythonOperators using XCom
+branching|branch workflow depending on whether run date is weekdays or not
+trigger|contain a task whose trigger rule is configurable
 
 ### Tasks
 
@@ -53,7 +56,6 @@ Task ID|description
 print_date|output current time
 sleep|sleep 1 second
 templated|sample task using templated command
-branching|branch workflow depending on whether run date is weekdays or not
 
 #### xcom_single
 
@@ -85,6 +87,33 @@ $ airflow backfill -s 2020-01-01 -e 2020-01-07 branching
 ```
 
 You can check workflow branching on [Airflow UI](http://localhost:8080/admin/airflow/tree?dag_id=branching).
+
+#### trigger
+
+Trigger task depends on states of prior tasks.
+
+Task ID|description
+:--|:--
+task_a|state controllable task via Airflow variable
+task_b|state controllable task via Airflow variable
+trigger_configured|trigger configurable task
+
+It is determined by Airflow variables Whether `task_a` or `task_a` succeeds or not.
+If the value of Airflow variable named `task_a` is `ok`, the task `task_a` will succeed (same to `task_b`).
+
+The task `trigger_configured` is a subsequent task of `task_a` and `task_b`, and its [trigger rule](https://airflow.apache.org/docs/apache-airflow/stable/concepts.html#trigger-rules)
+is also determined by Airflow variable named `trigger_rule`.
+
+So, before running the DAG, configure Airflow variables properly.
+
+```bash
+# Task state
+$ airflow variables -s task_a ok
+$ airflow variables -s task_b fail
+
+# Task trigger rule
+$ airflow variables -s trigger_rule all_done
+```
 
 ## Testing
 

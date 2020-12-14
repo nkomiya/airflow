@@ -20,6 +20,14 @@ dependencies.task\_id.ids\_quick\_start module
    :undoc-members:
    :show-inheritance:
 
+dependencies.task\_id.ids\_trigger module
+-----------------------------------------
+
+.. automodule:: dependencies.task_id.ids_trigger
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.task\_id.ids\_xcom module
 --------------------------------------
 

@@ -44,10 +44,26 @@ dependencies.operators.sleep module
    :undoc-members:
    :show-inheritance:
 
+dependencies.operators.state\_controllable module
+-------------------------------------------------
+
+.. automodule:: dependencies.operators.state_controllable
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 dependencies.operators.templated module
 ---------------------------------------
 
 .. automodule:: dependencies.operators.templated
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dependencies.operators.trigger\_configurable module
+---------------------------------------------------
+
+.. automodule:: dependencies.operators.trigger_configurable
    :members:
    :undoc-members:
    :show-inheritance:

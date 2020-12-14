@@ -13,6 +13,7 @@ Welcome to dags's documentation!
    dependencies
    branching
    quick_start
+   trigger
    xcom_kv
    xcom_single
 
